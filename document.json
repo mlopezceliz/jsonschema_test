@@ -1,0 +1,16 @@
+{
+    "entity": "SHIPMENT_TEST",
+    "id": "28128153121",
+    "metrics": {
+        "handling_time": {
+            "date_from": "2019-10-11T13:38:29-03:00",
+            "estimated_days": 1,
+            "estimated_working_days":3
+        },
+        "lead_time": {
+            "estimated_days": 3,
+            "shipping_offset_days": 2
+        }
+    },
+    "version": "0.0.1"
+}

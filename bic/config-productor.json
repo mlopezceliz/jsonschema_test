@@ -1,0 +1,49 @@
+{
+    "id": "1",
+    "producer_name": "handling_time",
+    "entity": "SHIPMENT_TEST",
+    "status": "enabled",
+    "allow_get": false,
+    "skip_validation": false,
+    "production_id": null,
+    "allowed_metrics": {
+        "handling_time": {
+            "date_from": "datetime",
+            "estimated_days": "number",
+            "estimated_working_days": "number"
+        },
+        "lead_time": {
+            "estimated_days": "number",
+            "shipping_offset_days": "number"
+        }
+    },
+    "flow_config": {
+        "big_queue_topic": "BIGQUEUE_TOPIC_SHP_METRICS_HANDLING_TIME_TOPIC_NAME",
+        "decorations": [
+            "shipment",
+            "service",
+            "sender_profile"
+        ],
+        "one_time_decorations": [
+            "seller_snapshot"
+        ],
+        "outputs": {
+            "index_names": [
+                "shipping_metrics"
+            ],
+            "kvs_db_names": [
+                "kvsUnificadoDB"
+            ],
+            "s3_bucket_names": [
+                "FeedShpMetricsSlaHT"
+            ],
+            "s3_exports": null,
+            "kvs_ds_names": null
+        }
+    },
+    "mandatory_fields": null,
+    "created_at": "2020-03-06 13:43:10.973758005 +0000 UTC",
+    "created_by": "fferrari",
+    "updated_at": "2020-06-04 20:16:08.122793703 +0000 UTC",
+    "updated_by": "fferrari"
+}

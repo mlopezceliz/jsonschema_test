@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "entity": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "handling_time": {
+                    "type": "object",
+                    "properties": {
+                        "date_from": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "estimated_days": {
+                            "type": "integer"
+                        },
+                        "estimated_working_days": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "date_from"
+                   
+                    ],
+                    "dependencies": {
+                        "estimated_days" : ["estimated_working_days"]
+                    }
+                },
+                "lead_time": {
+                    "type": "object",
+                    "properties": {
+                        "estimated_days": {
+                            "type": "integer"
+                        },
+                        "shipping_offset_days": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "estimated_days",
+                        "shipping_offset_days"
+                    ]
+                }
+            },
+            "required": [
+                "handling_time",
+                "lead_time"
+            ]
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "entity",
+        "id",
+        "metrics",
+        "version"
+    ]
+}
